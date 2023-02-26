@@ -334,7 +334,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             // Không cho nhập phép chia khi input rỗng
-            if (input.length() == 0 || input.charAt(input.length() - 1) == '-') {
+            if (input.length() == 0) {
                 input += "";
             } else {
                 if (operator.length() == 0) {
@@ -364,7 +364,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             // Không cho nhập phép nhân khi input rỗng
-            if (input.length() == 0 || input.charAt(input.length() - 1) == '-') {
+            if (input.length() == 0) {
                 input += "";
             } else {
                 if (operator.length() == 0) {
@@ -394,7 +394,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             // Không cho nhập phép cộng khi input rỗng or phía trước là dấu âm
-            if (input.length() == 0 || input.charAt(input.length() - 1) == '-') {
+            if (input.length() == 0) {
                 input += "";
             } else {
                 if (operator.length() == 0) {
