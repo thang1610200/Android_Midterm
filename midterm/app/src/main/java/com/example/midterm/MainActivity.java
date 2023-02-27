@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -194,17 +195,14 @@ public class MainActivity extends AppCompatActivity {
                 negative = true;
                 input += "-";
             }
-            else if(input.charAt(input.length() - 1) == '-'){
+            else if(input.charAt(input.length() - 1) == '-'){ // tránh trường hợp 2 dấu trừ
                 input += "";
             }else {
                 //Nếu chưa sử dụng phép tính thì lưu phép tính đó vào operator
                 if (operator.length() == 0) {
                     operator += "-";
                     input += "-";
-                } else { // Ngược lại là nếu có 1 phép tính đã được sử dụng rồi thì phép trừ này sẽ thay thế phép tính đó
-                    operator = "";
-                    operator += "-";
-                    input = input.substring(0, input.length() - 1);
+                } else { // Ngược lại là nếu có 1 phép tính đã được sử dụng rồi thì phép trừ này sẽ là dấu âm
                     input += "-";
                 }
             }
@@ -234,8 +232,9 @@ public class MainActivity extends AppCompatActivity {
         else if(operator.equals("+")){
             array = input.split("\\+");
         }
+
         EditText editText = (EditText) findViewById(R.id.edit);
-        // Nếu mảng vừa được tách
+        //
         if(array.length != 2){
             editText.setText(input);
         }
